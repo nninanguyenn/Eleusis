@@ -21,8 +21,8 @@
   .mood {
     font-family: 'Julius Sans One';
     font-size: 40px;
-    margin-top: 100px;
-    margin-left: 550px;
+    margin-top: -200px;
+    margin-left: center;
     animation-name: float;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
