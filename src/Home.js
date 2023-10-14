@@ -72,8 +72,8 @@ const Home = () => {
         <div className = "mood">your mood today is:
         <motion.div 
         className="pastEntriesButton"
-        initial={{x: -240, y: "100vh" }}
-        animate={{ x: -240, y: "65vh" }}
+        initial={{x: 0, y: "100vh" }}
+        animate={{ x: 0, y: "45vh" }}
         transition={{ type: "tween", duration: 2 }}
         >
 
@@ -84,7 +84,6 @@ const Home = () => {
           </button>
       </motion.div>
         <Graph userId={auth.currentUser.uid} />
-
         </div>
       ) : (
         <div>
