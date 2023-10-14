@@ -6,6 +6,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
+import Graph from "./Graph";
 import { questions } from "./Questions";
 import { motion } from "framer-motion";
 import { db, auth } from "./firebase"
@@ -67,6 +68,7 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
+
         <div className = "mood">your mood today is:
         <motion.div 
         className="pastEntriesButton"
@@ -81,6 +83,8 @@ const Home = () => {
             view your past entries
           </button>
       </motion.div>
+        <Graph userId={auth.currentUser.uid} />
+
         </div>
       ) : (
         <div>
