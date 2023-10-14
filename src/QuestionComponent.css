@@ -52,7 +52,7 @@
 }
 
 .responseOption:hover {
-    background-color: #ddddddb1;
+    background-color: #e9e9e9;
 }
 
 .doneButton {
@@ -67,7 +67,7 @@
 }
 
 .doneButton:hover {
-    background-color: #4e8551;
+    background-color: #447747;
 }
 
 .question.active {
