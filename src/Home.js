@@ -5,11 +5,14 @@ import { useUser } from "./UserContext";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
+import QuestionList from "./QuestionList";
+import { questions } from "./Questions";
 
 const Home = () => {
   const { user, setUser } = useUser();
   const [isPromptingForName, setIsPromptingForName] = useState(null);
   const [name, setName] = useState("");
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +20,12 @@ const Home = () => {
       setIsPromptingForName(!user.name);
     }
   }, [user]);
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
 
   const handleNameSubmit = async () => {
     if (name) {
@@ -52,7 +61,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <QuestionComponent />
+          <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
         </div>
       )}
     </div>
