@@ -43,7 +43,7 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
                 {/* Your design content goes here */}
             </div>
             <div className="responseButtons">
-            {question.options.map((option, index) => (
+                {question.options.map((option, index) => (
                 <button 
                    key={index} 
                    className={`responseOption ${selectedOption === option ? 'selected' : ''}`} 
@@ -53,7 +53,7 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
             ))}
             </div>
             <button className="doneButton" onClick={handleNextClick}>NEXT</button>
-        </div>
+                    </div>
     );
 }
 
