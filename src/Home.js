@@ -6,6 +6,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
+import Graph from "./Graph";
 import { questions } from "./Questions";
 import { db, auth } from "./firebase"
 
@@ -66,7 +67,7 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
-        <div>Thank you for answering the questions!</div>
+        <Graph userId={auth.currentUser.uid} />
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
