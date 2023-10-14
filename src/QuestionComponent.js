@@ -71,7 +71,7 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
         });
         await updateDoc(userPlayedDateRef, updates);
       }
-
+      setSelectedOption(null);
       onNext();
     } else {
       // Handle case where an answer isn't selected if required
