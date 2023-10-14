@@ -13,6 +13,8 @@ const Home = () => {
   const [isPromptingForName, setIsPromptingForName] = useState(null);
   const [name, setName] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [endOfQuestions, setEndOfQuestions] = useState(false);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,9 +25,11 @@ const Home = () => {
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+        setEndOfQuestions(true);
     }
-  };
+};
 
   const handleNameSubmit = async () => {
     if (name) {
@@ -59,6 +63,9 @@ const Home = () => {
           />
           <button onClick={handleNameSubmit}>Submit</button>
         </div>
+      ) : endOfQuestions ? (
+        // You can render some other content here, like a thank you message, results, etc.
+        <div>Thank you for answering the questions!</div>
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />

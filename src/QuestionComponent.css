@@ -75,3 +75,7 @@
     pointer-events: auto;
 
 }
+
+.responseOption.selected {
+    background-color: #ddd;
+}
