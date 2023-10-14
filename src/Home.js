@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { useUser } from "./UserContext";
 import { getAuth } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import Graph from "./Graph";
+import ResponseComponent from "./ResponseComponent";
+
 import { questions } from "./Questions";
 import { motion } from "framer-motion";
 import { db, auth } from "./firebase"
@@ -17,8 +19,17 @@ const Home = () => {
   const [name, setName] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [endOfQuestions, setEndOfQuestions] = useState(false);
-  
+  const [userResponse, setUserResponse] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentDocId, setCurrentDocId] = useState(null);
+
   const navigate = useNavigate();
+
+
+  const handleResponseSelected = () => {
+      setIsModalOpen(true);  // Open the modal when a response is selected
+  };
+
 
   useEffect(() => {
     if (user) {
@@ -27,12 +38,36 @@ const Home = () => {
   }, [user]);
 
   const handleNextQuestion = () => {
+    console.log("handleNextQuestion called, current index:", currentQuestionIndex);
     if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
         setEndOfQuestions(true);
     }
 };
+
+  const handleResponseSubmit = async () => {
+    console.log('userResponse:', userResponse);
+    console.log('currentDocId:', currentDocId);
+    if (userResponse && currentDocId) {
+      console.log("Hi");
+      const datePlayed = new Date().toISOString().slice(0, 10);  // Define datePlayed
+      const responseDocRef = doc(
+        db,
+        "users",
+        auth.currentUser.uid,
+        "PlayedDates",
+        datePlayed,
+        "Responses",
+        currentDocId
+      );
+      await updateDoc(responseDocRef, {
+        reason: userResponse
+      });
+      setUserResponse("");  // Clear the user response field
+      handleNextQuestion();  // Move on to the next question
+    }
+  };
 
   const handleNameSubmit = async () => {
     if (name) {
@@ -87,7 +122,14 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
+          <QuestionList questions={questions} onNext={handleResponseSelected} currentQuestionIndex={currentQuestionIndex} setCurrentDocId={setCurrentDocId}/>
+          <ResponseComponent 
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                userResponse={userResponse}
+                setUserResponse={setUserResponse}
+                handleResponseSubmit={handleResponseSubmit}
+            />
         </div>
       )}
     </div>

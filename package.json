@@ -11,10 +11,13 @@
     "firebase": "^10.5.0",
     "firebaseui": "^6.1.0",
     "framer-motion": "^10.16.4",
+    "install": "^0.13.0",
     "moment": "^2.29.4",
+    "npm": "^10.2.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
