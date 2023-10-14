@@ -23,7 +23,7 @@ const defaultFlags = {
   sad: 0,
 };
 
-const QuestionComponent = ({ question, index, className, onNext }) => {
+const QuestionComponent = ({ question, index, className, onNext, setCurrentDocId }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const user = useUser();
 
@@ -51,11 +51,12 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
 
       // Save the question-answer in a sub-collection called "Responses"
       const userQuestionsRef = collection(userPlayedDateRef, "Responses");
-      await addDoc(userQuestionsRef, {
+      const docRef = await addDoc(userQuestionsRef, {
         question: question,
         answer: selectedOption,
       });
-
+      setCurrentDocId(docRef.id);
+      
       // Update the flags based on selected option
       if (selectedOption.flags && selectedOption.flags.length) {
         let updates = {};
@@ -71,7 +72,7 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
         });
         await updateDoc(userPlayedDateRef, updates);
       }
-
+      setSelectedOption(null);
       onNext();
     } else {
       // Handle case where an answer isn't selected if required

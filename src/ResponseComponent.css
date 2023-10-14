@@ -1,0 +1,47 @@
+.Modal {
+    /* Copy styles from .questionContainer in QuestionComponent.css */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.responseTextarea {
+    width: 90%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.responseSubmitButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4e8551;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.responseSubmitButton:hover {
+    background-color: #376c3d;
+}
