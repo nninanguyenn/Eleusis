@@ -1,42 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { useNavigate } from 'react-router-dom';
 import { signInWithGoogle } from "./firebase.js"; // adjust the path
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { auth, googleProvider } from "./firebase.js";
+import { getFirestore, doc, getDoc, setDoc, addDoc, collection } from "firebase/firestore";
+import { auth, googleProvider, db} from "./firebase.js";
 import { useUser } from './UserContext';
 
 import './Login.css';
 
 
-const db = getFirestore();
 
 const Login = () => {
     const navigate = useNavigate();
     const { setUser } = useUser();
+    const [isPromptingForName, setIsPromptingForName] = useState(false);
+    const [name, setName] = useState('');
 
     const signInWithGoogle = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            // Get user info
             const user = result.user;
-            setUser(user);
-            console.log(user);
-            const email = user.email;
             const uid = user.uid;
-          // The signed-in user info can be obtained with result.user
-          navigate('/home')
+            const userDocRef = doc(getFirestore(), 'users', uid);
+            const userDocSnap = await getDoc(userDocRef);
+      
+            if (userDocSnap.exists()) {
+              // User doesn't exist in Firestore, prompt for a name
+              setUser(userDocSnap.data());
+
+            } else {
+                setUser({uid: uid, email: user.email});
+            }
+            navigate('/home');
         } catch (error) {
           console.error(error.message);
         }
-      };
-
+    };
+    
     return (
-    <div className="loginButton">
-      <h1>Login</h1>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
-    </div>
-  );
+        <div className="loginButton">
+            <button onClick={signInWithGoogle}>Sign in with Google</button>
+        </div>
+    );
 };
+
 
 export default Login;
