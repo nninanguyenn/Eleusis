@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "./firebase.js";
 import "./Login.css";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,8 +26,25 @@ const Login = () => {
   };
 
   return (
-    <div className="loginButton">
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <div className="container">
+      <motion.div
+      className="title"
+      initial={{ y: "-60vh", opacity: 0}}
+      animate={{ y: 0, opacity: 1}}
+      transition={{ type: "tween", duration: 3.5 }}
+      style={{ fontFamily: 'Julius Sans One'}}
+      >
+        Elusis
+      </motion.div>
+      <motion.div 
+      className="loginButton"
+      initial={{ y: "100vh" }}
+      animate={{ y: 0 }}
+      transition={{ type: "tween", duration: 2 }}
+      >
+
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
+      </motion.div>
     </div>
   );
 };

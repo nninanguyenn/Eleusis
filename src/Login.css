@@ -3,5 +3,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
+
+.title {
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
