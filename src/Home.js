@@ -7,6 +7,7 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import { questions } from "./Questions";
+import {Text, TextInput, View} from 'react';
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -65,7 +66,7 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
-        <div>Thank you for answering the questions!</div>
+        <div className = "thankYou">thank you for completing your reflections today !</div>
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
