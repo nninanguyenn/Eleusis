@@ -7,6 +7,7 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import { questions } from "./Questions";
+import { db, auth } from "./firebase"
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -34,9 +35,9 @@ const Home = () => {
   const handleNameSubmit = async () => {
     if (name) {
       const userDocRef = doc(
-        getFirestore(),
+        db,
         "users",
-        getAuth().currentUser.uid
+        auth.currentUser.uid
       );
       await setDoc(
         userDocRef,
