@@ -4,6 +4,7 @@ import "./Home.css";
 import { useUser } from "./UserContext";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
+import QuestionComponent from "./QuestionComponent";
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -54,7 +55,10 @@ const Home = () => {
           <button onClick={handleNameSubmit}>Submit</button>
         </div>
       ) : (
+        <div>
         <>Welcome home, {user.name}!</>
+        <QuestionComponent />
+        </div>
       )}
     </div>
   );
