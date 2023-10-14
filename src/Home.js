@@ -38,10 +38,6 @@ const Home = () => {
     }
   };
 
-  if (isPromptingForName === null) {
-    return <div>Loading...</div>; // or your preferred loading indicator
-  }
-
   return (
     <div className="background">
       {isPromptingForName ? (
@@ -56,8 +52,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-        <>Welcome home, {user.name}!</>
-        <QuestionComponent />
+          <QuestionComponent />
         </div>
       )}
     </div>
