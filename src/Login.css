@@ -1,3 +1,10 @@
+body {
+    background-image: url(paperBackground.jpeg);
+    background-color: ivory;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
 .loginButton {
     size: 100;
     display: flex;
