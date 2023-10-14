@@ -7,7 +7,7 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import { questions } from "./Questions";
-import {Text, TextInput, View} from 'react';
+import { motion } from "framer-motion";
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -66,7 +66,21 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
-        <div className = "thankYou">thank you for completing your reflections today !</div>
+        <div className = "mood">your mood today is:
+        <motion.div 
+        className="pastEntriesButton"
+        initial={{y: "100vh" }}
+        animate={{ x: -250, y: "65vh" }}
+        transition={{ type: "tween", duration: 2 }}
+        >
+
+          <button className="green-button" 
+          style={{ fontFamily: 'Julius Sans One'}}
+          >
+            view your past entries
+          </button>
+      </motion.div>
+        </div>
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
