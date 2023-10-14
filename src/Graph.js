@@ -7,7 +7,6 @@ import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 import "./Graph.css";
 
-Chart.register(CategoryScale);
 
 const chartOptions = {
   scales: {
@@ -25,6 +24,9 @@ const chartOptions = {
     ],
   },
 };
+
+Chart.register(CategoryScale);
+
 
 const fetchFlagsHistory = async (userId) => {
   const playedDatesRef = collection(db, "users", userId, "PlayedDates");
