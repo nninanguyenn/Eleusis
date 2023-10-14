@@ -18,6 +18,9 @@ const defaultFlags = {
   frustrated: 0,
   anxious: 0,
   neutral: 0,
+  aggressive: 0,
+  motivated: 0,
+  sad: 0,
 };
 
 const QuestionComponent = ({ question, index, className, onNext }) => {
@@ -79,7 +82,7 @@ const QuestionComponent = ({ question, index, className, onNext }) => {
     <div className={`questionContainer ${className}`}>
       <div className="questionHeader">
         <div>
-          <span> {index + 1} / 12</span>
+          <span> {index + 1} / 11</span>
           <p>{question.description}</p>
         </div>
       </div>

@@ -8,6 +8,7 @@ import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import Graph from "./Graph";
 import { questions } from "./Questions";
+import { motion } from "framer-motion";
 import { db, auth } from "./firebase"
 
 const Home = () => {
@@ -67,7 +68,24 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
+
+        <div className = "mood">your mood today is:
+        <motion.div 
+        className="pastEntriesButton"
+        initial={{x: -240, y: "100vh" }}
+        animate={{ x: -240, y: "65vh" }}
+        transition={{ type: "tween", duration: 2 }}
+        >
+
+          <button className="green-button" 
+          style={{ fontFamily: 'Julius Sans One'}}
+          >
+            view your past entries
+          </button>
+      </motion.div>
         <Graph userId={auth.currentUser.uid} />
+
+        </div>
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />
