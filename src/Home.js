@@ -7,7 +7,11 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import { questions } from "./Questions";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
+=======
+import { db, auth } from "./firebase"
+>>>>>>> 6906570a5ac0d36f3c7ef2dc8da12f9ba56fb00e
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -35,9 +39,9 @@ const Home = () => {
   const handleNameSubmit = async () => {
     if (name) {
       const userDocRef = doc(
-        getFirestore(),
+        db,
         "users",
-        getAuth().currentUser.uid
+        auth.currentUser.uid
       );
       await setDoc(
         userDocRef,
