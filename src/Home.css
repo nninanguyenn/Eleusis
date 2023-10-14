@@ -49,3 +49,20 @@
 .green-button:hover {
     background-color: rgb(59, 123, 73);
   }
+
+.tree1 {
+  position: absolute;
+  bottom: 50px;
+  right: 0px;
+}
+
+.tree2 {
+  position: absolute;
+  bottom: 100px;
+  right: -150px;
+}
+
+.bottom-left-image {
+  width: 300px;
+  height: 300px;
+}
