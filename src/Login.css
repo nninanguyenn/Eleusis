@@ -1,10 +1,11 @@
 body {
-    background-image: url(paperBackground.jpeg);
+    background-image: url(paper-background.jpg);
     background-color: ivory;
     background-size: cover;
     height: 100%;
     overflow: hidden;
 }
+/* <a href="https://www.freepik.com/free-photo/paper-background_19138538.htm#query=cream%20paper&position=1&from_view=keyword&track=ais">Image by rawpixel.com</a> on Freepik */
 
 .loginButton {
     size: 100;
@@ -30,7 +31,7 @@ body {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px); /* Adjust the floating height */
+      transform: translateY(-20px);
     }
     100% {
       transform: translateY(0);
@@ -57,15 +58,48 @@ body {
 
 .red-button:hover {
     background-color: rgb(59, 123, 73);
-  }
+}
 
 .image-container {
     position: absolute;
     bottom: 0;
     left: 70px;
-  }
+}
 
 .bottom-left-image {
     width: 300px;
     height: 300px;
   }
+
+.tree1 {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+}
+
+.top-tree-1 {
+    width: 700px;
+    height: 700px;
+}
+
+.tree2 {
+    position: absolute;
+    bottom: 100px;
+    right: -150px;
+}
+
+.top-tree-2 {
+    width: 700px;
+    height: 700px;
+}
+
+.treeAb1 {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+}
+
+.treeAbSize {
+    width: 450px;
+    height: 450px;
+}
