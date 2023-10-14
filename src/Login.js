@@ -32,7 +32,7 @@ const Login = () => {
       className="title"
       
       initial={{ y: "-60vh", opacity: 0}}
-      animate={{ y: 0, opacity: 1, transition: { delay: 3 } }}
+      animate={{ y: 0, opacity: 1, transition: { delay: 1.5 } }}
       transition={{ type: "tween", duration: 3.5 }}
       style={{ fontFamily: 'Julius Sans One', marginBottom: '20px'}}
       >
@@ -56,7 +56,7 @@ const Login = () => {
       className="image-container"
       initial={{ x: "-60vh", opacity: 0}}
       animate={{ x: 0, opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 3 }}
+      transition={{ type: "tween", duration: 2, delay: 1 }}
       >
         <img
           img src = {fox}
