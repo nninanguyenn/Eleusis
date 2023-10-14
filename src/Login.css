@@ -5,6 +5,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
+
 .loginButton {
     size: 100;
     display: flex;
@@ -13,11 +14,28 @@ body {
 }
 
 .title {
-    font-size: 70px;
+    font-size: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 3px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
+
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); /* Adjust the floating height */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 .container {
     height: 100vh;
@@ -25,4 +43,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+.red-button {
+    background-color: #E62020;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.red-button:hover {
+    background-color: rgb(149, 0, 0);
+  }
+
+.image-container {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+  }
+
+.bottom-left-image {
+    width: 300px;
+    height: 300px;
   }

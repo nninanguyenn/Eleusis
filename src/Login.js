@@ -1,4 +1,5 @@
 import React from "react";
+import fox from './fox.png';
 import { useNavigate } from "react-router-dom";
 import {
   getAuth,
@@ -29,12 +30,13 @@ const Login = () => {
     <div className="container">
       <motion.div
       className="title"
+      
       initial={{ y: "-60vh", opacity: 0}}
-      animate={{ y: 0, opacity: 1}}
+      animate={{ y: 0, opacity: 1, transition: { delay: 3 } }}
       transition={{ type: "tween", duration: 3.5 }}
-      style={{ fontFamily: 'Julius Sans One'}}
+      style={{ fontFamily: 'Julius Sans One', marginBottom: '20px'}}
       >
-        Elusis
+        Eleusis
       </motion.div>
       <motion.div 
       className="loginButton"
@@ -43,7 +45,23 @@ const Login = () => {
       transition={{ type: "tween", duration: 2 }}
       >
 
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <button className="red-button" 
+        onClick={signInWithGoogle}
+        style={{ fontFamily: 'Julius Sans One'}}
+        >
+          Sign in with Google
+        </button>
+      </motion.div>
+      <motion.div 
+      className="image-container"
+      initial={{ x: "-60vh", opacity: 0}}
+      animate={{ x: 0, opacity: 1}}
+      transition={{ type: "tween", duration: 2, delay: 3 }}
+      >
+        <img
+          img src = {fox}
+          className="bottom-left-image"
+        />
       </motion.div>
     </div>
   );
