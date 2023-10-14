@@ -66,7 +66,7 @@ const Home = () => {
         </div>
       ) : endOfQuestions ? (
         // You can render some other content here, like a thank you message, results, etc.
-        <div>Thank you for answering the questions!</div>
+        <div className = "thankYou">thank you for completing your reflections today !</div>
       ) : (
         <div>
           <QuestionList questions={questions} onNext={handleNextQuestion} currentQuestionIndex={currentQuestionIndex} />

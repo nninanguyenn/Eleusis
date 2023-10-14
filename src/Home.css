@@ -14,3 +14,14 @@
   .question.active {
     opacity: 1;
   }
+
+  .thankYou {
+    font-family: 'Julius Sans One';
+    font-size: 30px;
+    margin-top: 300px;
+    margin-left: 300px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
