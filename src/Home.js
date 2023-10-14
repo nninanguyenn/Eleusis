@@ -7,11 +7,8 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import QuestionComponent from "./QuestionComponent";
 import QuestionList from "./QuestionList";
 import { questions } from "./Questions";
-<<<<<<< HEAD
 import { motion } from "framer-motion";
-=======
 import { db, auth } from "./firebase"
->>>>>>> 6906570a5ac0d36f3c7ef2dc8da12f9ba56fb00e
 
 const Home = () => {
   const { user, setUser } = useUser();
@@ -73,8 +70,8 @@ const Home = () => {
         <div className = "mood">your mood today is:
         <motion.div 
         className="pastEntriesButton"
-        initial={{y: "100vh" }}
-        animate={{ x: -250, y: "65vh" }}
+        initial={{x: -240, y: "100vh" }}
+        animate={{ x: -240, y: "65vh" }}
         transition={{ type: "tween", duration: 2 }}
         >
 
