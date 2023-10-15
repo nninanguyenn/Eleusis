@@ -1,5 +1,5 @@
 import React from "react";
-import fox from './fox.png';
+import fox from './fox.PNG';
 import tree1 from './tree_1.png';
 import tree2 from './tree_2.png';
 import abTree from './abstract_tree.png';

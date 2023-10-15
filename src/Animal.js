@@ -4,10 +4,26 @@ import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "./firebase";
 import "./Animal.css";
 
+import bearIMG from './Bear.PNG';
+import bunnyIMG from './Bunny.PNG';
+import foxIMG from './fox.PNG';
+import snakeIMG from './snake.PNG';
+import birdIMG from './bird.PNG';
+
+const animalImages = {
+  bearIMG,
+  bunnyIMG,
+  foxIMG,
+  snakeIMG,
+  birdIMG
+};
+
 const animalVectors = {
   bear: [0.7035, 0.2009, 0.3014, 0.2009, 0.2009, 0.4018, 0.3014, 0.2009],
   bunny: [0.1037, 0.4148, 0.5184, 0.2074, 0.5184, 0.3111, 0.3111, 0.2074],
   fox: [0.4444, 0.3333, 0.3333, 0.3333, 0.3333, 0.4444, 0.3333, 0.2222],
+  snake: [0.57,0.34,0.46,0.23,0.23,0.46,0.34,0.23],
+  bird: [0.21,0.31,0.52,0.21,0.41,0.41,0.31,0.21],
 };
 
 function dotProduct(userVec, animalVec) {
@@ -98,6 +114,7 @@ const Animal = () => {
   return (
     <div className="animal-box">
       {bestAnimal && <span>{bestAnimal}</span>}
+      {bestAnimal && <img src={animalImages[`${bestAnimal}IMG`]} alt={bestAnimal} className="animalPNG"/>}
     </div>
   );
 };
