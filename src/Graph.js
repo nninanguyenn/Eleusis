@@ -49,7 +49,9 @@ const processFlagData = (history) => {
   let frustrated = [];
   let anxious = [];
   let neutral = [];
-
+  let aggressive = [];
+  let motivated = [];
+  let sad = [];
   history.forEach((data) => {
     dates.push(data.date);
     happy.push(data.flags.happy);
@@ -57,9 +59,11 @@ const processFlagData = (history) => {
     frustrated.push(data.flags.frustrated);
     anxious.push(data.flags.anxious);
     neutral.push(data.flags.neutral);
-  });
-
-  return { dates, happy, calm, frustrated, anxious, neutral };
+    aggressive.push(data.flags.aggressive);
+    motivated.push(data.flags.motivated);
+    sad.push(data.flags.sad);
+  })
+  return { dates, happy, calm, frustrated, anxious, neutral, aggressive, motivated, sad };
 };
 
 const Graph = ({ userId }) => {
@@ -81,29 +85,44 @@ const Graph = ({ userId }) => {
     labels: data.dates,
     datasets: [
       {
-        label: "Happy",
-        data: data.happy,
-        borderColor: "green",
-      },
-      {
-        label: "Calm",
-        data: data.calm,
-        borderColor: "blue",
-      },
-      {
-        label: "Frustrated",
-        data: data.frustrated,
-        borderColor: "red",
+        label: "Aggressive",
+        data: data.aggressive,
+        borderColor: "#FF0000",
       },
       {
         label: "Anxious",
         data: data.anxious,
-        borderColor: "orange",
+        borderColor: "teal",
+      },
+      {
+        label: "Calm",
+        data: data.calm,
+        borderColor: "#888FFF",
+      },
+      {
+        label: "Frustrated",
+        data: data.frustrated,
+        borderColor: "#AD0000",
+      },
+      {
+        label: "Happy",
+        data: data.happy,
+        borderColor: "#FAFF4E",
+      },
+      {
+        label: "Motivated",
+        data: data.motivated,
+        borderColor: "#88FF88",
       },
       {
         label: "Neutral",
         data: data.neutral,
         borderColor: "grey",
+      },
+      {
+        label: "Sad",
+        data: data.sad,
+        borderColor: "navy",
       },
     ],
   };

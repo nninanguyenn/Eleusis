@@ -39,10 +39,11 @@
 }
 
 .entryContent {
-    width: 90%;
+    width: 300px;
     background: radial-gradient(circle at center, #c5d8c4, #c5d8c4);
     border-radius: 20px;
     margin-bottom: 20px;
+    
 }
 
 .emotionFlag, .response {

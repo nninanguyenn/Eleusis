@@ -33,6 +33,7 @@ const Journal = () => {
             date,
             flags: data.flags,
             userResponse: data.userResponse,
+            animal: data.bestMatchingAnimal,
           });
         });
         setEntries(entriesData);
@@ -53,9 +54,9 @@ const Journal = () => {
           </div>
           <div className="entryContent">
             <div className="emotionFlag">
-              {JSON.stringify(entry.flags, null, 2)}
+              {"your mood this day - " + (entry.animal)}
             </div>
-            <div className="response">{entry.userResponse}</div>
+            <div className="response">{entry.userResponse }</div>
           </div>
         </div>
       ))}
