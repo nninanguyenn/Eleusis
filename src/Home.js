@@ -150,7 +150,8 @@ const Home = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter Here"
               />
-              <button onClick={handleNameSubmit}>Submit</button>
+              <button className="submit-button"
+              onClick={handleNameSubmit}>Submit</button>
             </div>
             <motion.div
               className="treeAb1"

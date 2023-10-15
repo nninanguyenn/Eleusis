@@ -3,7 +3,7 @@ body{
 }
 
 .objects {
-    margin-left: 160px;
+    margin-left: 130px;
 }
 
 .flower {
@@ -55,8 +55,9 @@ body{
 .table-size {
     height: 400px;
     width: 1000px;
-    margin-left: -70px;
+    margin-left: -100px;
     margin-top: -140px;
+    z-index: -1;
     animation-name: float;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;

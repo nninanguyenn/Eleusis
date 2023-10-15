@@ -83,3 +83,7 @@
   animation-iteration-count: infinite;
   display: inline-block;
 }
+
+.submit-button {
+  z-index: 3;
+}
