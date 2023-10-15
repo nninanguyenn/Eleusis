@@ -8,7 +8,7 @@ import family from './Alfreds_Family.PNG'
 
 function QuestionDesign1() {
     return (
-        <div className="container">
+        <div className="design-1-container">
             <div className="alfred">
                 <img
                     img src={alfred} 

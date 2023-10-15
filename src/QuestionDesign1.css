@@ -1,8 +1,10 @@
-.container {
+.design-1-container {
     position: relative;
+    height: inherit;
 }
 
 .alfred-Size {
+    z-index: 0;
     height: 100px;
     width: 100px;
     position: absolute;
@@ -11,6 +13,7 @@
 }
 
 .tree1-size {
+    z-index: 0;
     height: 300px;
     width: 300px;
     position: absolute;
@@ -19,6 +22,7 @@
 }
 
 .tree2-size {
+    z-index: 0;
     height: 350px;
     width: 350px;
     position: absolute;
@@ -33,23 +37,27 @@
 }
 
 .alf {
+    z-index: -1;
     height: 100px;
     width: 100px;
     transform: translateX(30px);
 }
 
 .lover {
+    z-index: -1;
     height: 100px;
     width: 100px;
 }
 
 .family-container {
     position: absolute;
-    top: 180px;
-    transform: translateX(-80px);
+    bottom: 10px;
+    right: 400px;
+    
 }
 
 .family {
+    z-index: -1;
     height: 100px;
     width: 100px;
 }
