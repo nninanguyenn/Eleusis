@@ -1,11 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .journal-parent {
     display: flex;
     font-family: 'Julius Sans One';
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     overflow-y: auto;
+    height: 100vh;
     padding: 20px;
 }
 

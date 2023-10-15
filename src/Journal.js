@@ -47,7 +47,7 @@ const Journal = () => {
     <Graph userId={auth.currentUser.uid} />
 
     <div className={`journalContainer ${entries.length > 0 ? "active" : ""}`}>
-      {entries.map((entry, index) => (
+      {entries.length && entries.map((entry, index) => (
         <div className="journalEntry" key={index}>
           <div className="entryHeader">
             <span>{entry.date}</span>
