@@ -9,14 +9,14 @@ function QuestionDesign5() {
     return (
         <div className='images'
             style={{ 
-            paddingTop: "75px",
+            paddingBottom: "35px",
             alignItems: "center",
             justifyContent: "center"}}
         >
         <img
             img src={alfred} 
-            alt="alfred"
-            className="alfred-Size"
+            alt="alfred5"
+            className="alfred5-Size"
             />
          <img
             img src={fence} 
