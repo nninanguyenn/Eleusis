@@ -17,6 +17,7 @@ import QuestionDesign2 from './QuestionDesign2';
 import QuestionDesign3 from "./QuestionDesign3";
 import QuestionDesign4 from "./QuestionDesign4";
 import QuestionDesign5 from './QuestionDesign5';
+import QuestionDesign10 from "./QuestionDesign10";
 
 
 const defaultFlags = {
@@ -36,7 +37,8 @@ const designMap = {
   2: <QuestionDesign2/>,
   3: <QuestionDesign3/>,
   4: <QuestionDesign4/>,
-  5: <QuestionDesign5/>
+  5: <QuestionDesign5/>,
+  10: <QuestionDesign10/>
 };
 
 
