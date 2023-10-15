@@ -52,7 +52,6 @@ const Animal = () => {
   useEffect(() => {
     if (moodMap.flags) {
       const flags = moodMap.flags;
-      console.log(flags);
       const tempVec = [
         flags.aggressive,
         flags.anxious,
@@ -63,25 +62,29 @@ const Animal = () => {
         flags.neutral,
         flags.sad,
       ];
-      determineBestMatchingAnimal();
+      setMoodVec(tempVec); // Set the moodVec state
+      determineBestMatchingAnimal(tempVec); // Pass the moodVec to the function
     }
   }, [moodMap]);
 
-  const determineBestMatchingAnimal = async () => {
-    const animal = await getBestMatchingAnimal();
+  const determineBestMatchingAnimal = async (moodVec) => {
+    const animal = getBestMatchingAnimal(moodVec); // Removed await since this function is now synchronous
     setBestAnimal(animal);
-    };
-
-  const getBestMatchingAnimal = async () => {
-    let maxDotProduct = -Infinity;
-    let bestAnimal = "";
     const user = auth.currentUser;
     const today = new Date().toLocaleDateString("en-CA", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      });
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    const playedDateRef = doc(db, "users", user.uid, "PlayedDates", today);
+    await updateDoc(playedDateRef, {
+      bestMatchingAnimal: animal
+    });
+  };
 
+  const getBestMatchingAnimal = (moodVec) => {
+    let maxDotProduct = -Infinity;
+    let bestAnimal = "";
     for (const [animal, vector] of Object.entries(animalVectors)) {
       const currentDotProduct = dotProduct(moodVec, vector);
       if (currentDotProduct > maxDotProduct) {
@@ -89,17 +92,12 @@ const Animal = () => {
         bestAnimal = animal;
       }
     }
-        const playedDateRef = doc(db, "users", user.uid, "PlayedDates", today);
-        await updateDoc(playedDateRef, {
-        bestMatchingAnimal: bestAnimal
-    });
-
     return bestAnimal;
   };
 
   return (
     <div className="animal-box">
-      {moodVec && <span>{getBestMatchingAnimal()}</span>}
+      {bestAnimal && <span>{bestAnimal}</span>}
     </div>
   );
 };
