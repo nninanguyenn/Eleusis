@@ -37,7 +37,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkQuizTaken();
+    // checkQuizTaken();
     if (user) {
       setIsPromptingForName(!user.name);
     }
