@@ -16,6 +16,7 @@ import QuestionDesign1 from './QuestionDesign1';
 import QuestionDesign2 from './QuestionDesign2';
 import QuestionDesign5 from './QuestionDesign5';
 
+
 const defaultFlags = {
   happy: 0,
   calm: 0,
@@ -101,7 +102,7 @@ const QuestionComponent = ({ question, index, className, onNext, setIsOptionSele
     <div className={`questionContainer ${className}`}>
       <div className="questionHeader">
         <div>
-          <span> {index + 1} / 11</span>
+          <span> {index + 1} / 10</span>
           <p>{question.description}</p>
         </div>
       </div>
