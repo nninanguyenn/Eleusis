@@ -40,6 +40,7 @@
     flex-direction: column;
     width: 90%;
     gap: 10px;
+    z-index: 3;
 }
 
 .responseOption {
@@ -49,6 +50,7 @@
     background-color: #f3f3f3;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 3;
 }
 
 .responseOption:hover {
@@ -64,6 +66,7 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 3;
 }
 
 .doneButton:hover {

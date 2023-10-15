@@ -2,7 +2,7 @@ import React from 'react';
 import './QuestionDesign5.css';
 import alfred from "./Alfred.PNG";
 import fence from "./Fence.PNG";
-import house from "./House.PNG";
+import house from "./house1.png";
 
 
 function QuestionDesign5() {

@@ -60,7 +60,7 @@ const Login = () => {
       className="treeAb1"
       initial={{ opacity: 0}}
       animate={{ opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 1 }}
+      transition={{ type: "tween", duration: 2, delay: 1.5 }}
       >
         <img
           img src = {abTree}
@@ -104,7 +104,7 @@ const Login = () => {
       className="speech"
       initial={{ opacity: 0}}
       animate={{ opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 2 }}
+      transition={{ type: "tween", duration: 2, delay: 3 }}
       >
         <img
           img src = {speechb}

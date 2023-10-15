@@ -1,0 +1,40 @@
+.house1 {
+    position: absolute;
+    top: -40px;
+    left: 15px;
+    bottom: 1000px;
+    right: 50px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    display: inline;
+    z-index: 0;
+}
+
+.big-house-size {
+    height: 450px;
+    width: 450px;
+}
+
+.house2 {
+    position: absolute;
+    left: 500px;
+    bottom: 50px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    display: inline;
+    z-index: 0;
+}
+
+.small-house-size {
+    height: 100px;
+    width: 100px;
+}
+
+.design-4-container {
+    position: relative;
+    height: inherit;
+}

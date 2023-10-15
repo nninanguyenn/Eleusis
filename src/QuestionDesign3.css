@@ -1,0 +1,23 @@
+.design-3-container {
+    position: relative;
+    height: inherit;
+}
+
+.fight {
+    position: absolute;
+    left: 225px;
+    bottom: 15px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.fight-size {
+    z-index: 0;
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
