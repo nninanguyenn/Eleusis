@@ -144,6 +144,7 @@ const Home = () => {
               }}
             >
               <input
+                className="input-bar"
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter Here"
