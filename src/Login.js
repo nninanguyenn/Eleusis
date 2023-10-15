@@ -49,18 +49,21 @@ const Login = () => {
       transition={{ type: "tween", duration: 2 }}
       >
 
-        <button className="red-button" 
+        <motion.button className="red-button"
+        whileHover={{ scale: 1.1, duration: .3 }}
+        whileTap={{ scale: 0.9 }}
+
         onClick={signInWithGoogle}
         style={{ fontFamily: 'Julius Sans One'}}
         >
           Sign in with Google
-        </button>
+        </motion.button>
       </motion.div>
       <motion.div 
       className="treeAb1"
       initial={{ opacity: 0}}
       animate={{ opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 1.5 }}
+      transition={{ type: "tween", duration: 2, delay: 2 }}
       >
         <img
           img src = {abTree}
@@ -71,7 +74,7 @@ const Login = () => {
       className="image-container"
       initial={{ x: "-60vh", opacity: 0}}
       animate={{ x: 0, opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 1 }}
+      transition={{ type: "tween", duration: 1.5, delay: 2.5 }}
       >
         <img
           img src = {fox}
@@ -104,7 +107,7 @@ const Login = () => {
       className="speech"
       initial={{ opacity: 0}}
       animate={{ opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 3 }}
+      transition={{ type: "tween", duration: 2, delay: 4.5 }}
       >
         <img
           img src = {speechb}

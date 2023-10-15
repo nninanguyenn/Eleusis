@@ -1,5 +1,6 @@
 import React from 'react';
 import './QuestionDesign1.css';
+import { motion } from "framer-motion";
 import alfred from './Alfred.PNG';
 import tree1 from './tree_1.png'
 import tree2 from './tree_2.png'
@@ -9,14 +10,17 @@ import family from './Alfreds_Family.PNG'
 function QuestionDesign1() {
     return (
         <div className="design-1-container">
-            <div className="alfred">
+            <motion.div 
+            className="alfred"
+            animate={{ x: [5, 15, 5]}}
+            transition={{ repeat: Infinity, duration: 2 }}>
                 <img
                     img src={alfred} 
                     alt="Design for question 1"
                     className="alfred-Size"
                     />
                 {/* Any other JSX elements or logic specific to this design */}
-            </div>
+            </motion.div>
             <div className="tree_1">
                 <img
                     img src={tree1} 
@@ -31,7 +35,10 @@ function QuestionDesign1() {
                     />
                 {/* Any other JSX elements or logic specific to this design */}
             </div>
-            <div className="lover-container">
+            <motion.div 
+            className="lover-container"
+            animate={{ x: [5, 15, 5]}}
+            transition={{ repeat: Infinity, duration: 2 }}>
                 <img
                     img src={alfred} 
                     className="alf"
@@ -40,13 +47,16 @@ function QuestionDesign1() {
                     img src={lover}
                     className="lover"
                     />
-            </div>
-            <div className="family-container">
+            </motion.div>
+            <motion.div 
+            className="family-container"
+            animate={{ x: [5, 15, 5]}}
+            transition={{ repeat: Infinity, duration: 2 }}>
                 <img
                     img src={family}
                     className="family"
                 />
-            </div>
+            </motion.div>
         </div>
     );
 }
