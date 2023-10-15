@@ -23,12 +23,13 @@ const defaultFlags = {
   sad: 0,
 };
 
-const QuestionComponent = ({ question, index, className, onNext }) => {
+const QuestionComponent = ({ question, index, className, onNext, setIsOptionSelected, }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const user = useUser();
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    setIsOptionSelected(true);
   };
 
   const handleNextClick = async () => {
