@@ -84,6 +84,37 @@
   display: inline-block;
 }
 
+.nameInput {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .submit-button {
   z-index: 3;
+  background-color: #58a15ca9;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.65s;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+}
+
+.input-bar {
+  margin-top: 30px;
+  width: 30%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-family: "Julius Sans One";
+  font-size: larger;
 }
