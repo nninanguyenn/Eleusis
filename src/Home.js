@@ -17,6 +17,7 @@ import ResponseComponent from "./ResponseComponent";
 import { questions } from "./Questions";
 import { motion } from "framer-motion";
 import { db, auth } from "./firebase";
+import Animal from "./Animal";
 import tree1 from "./tree_1.png";
 import tree2 from "./tree_2.png";
 import fox from "./fox.png";
@@ -37,7 +38,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkQuizTaken();
+    //checkQuizTaken();
     if (user) {
       setIsPromptingForName(!user.name);
     }
@@ -189,10 +190,11 @@ const Home = () => {
 
         <div className="mood">
           your mood today is:
+          <Animal />
           <motion.div
             className="pastEntriesButton"
             initial={{ x: 0, y: "100vh" }}
-            animate={{ x: 0, y: "45vh" }}
+            animate={{ x: 0, y: "10vh" }}
             transition={{ type: "tween", duration: 2 }}
           >
             <button

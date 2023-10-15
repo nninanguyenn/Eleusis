@@ -55,7 +55,7 @@ export const questions = [
             },
             {
                 description: "Large-sized animal",
-                flags: ["anxiuos", "frustrated"]
+                flags: ["anxious", "frustrated"]
             },
         ],
     },
@@ -164,7 +164,7 @@ export const questions = [
         options: [
             {
                 description: "Throw it away",
-                flags: ["aggressive", "frusttrated", "anxiuos"]
+                flags: ["aggressive", "frusttrated", "anxious"]
             },
             {
                 description: "Put it back",
