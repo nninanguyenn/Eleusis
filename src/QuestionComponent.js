@@ -17,6 +17,11 @@ import QuestionDesign2 from './QuestionDesign2';
 import QuestionDesign3 from "./QuestionDesign3";
 import QuestionDesign4 from "./QuestionDesign4";
 import QuestionDesign5 from './QuestionDesign5';
+import QuestionDesign6 from './QuestionDesign6';
+import QuestionDesign7 from './QuestionDesign7';
+import QuestionDesign8 from './QuestionDesign8';
+import QuestionDesign9 from './QuestionDesign9';
+
 import QuestionDesign10 from "./QuestionDesign10";
 
 
@@ -38,6 +43,10 @@ const designMap = {
   3: <QuestionDesign3/>,
   4: <QuestionDesign4/>,
   5: <QuestionDesign5/>,
+  6: <QuestionDesign6/>,
+  7: <QuestionDesign7/>,
+  8: <QuestionDesign8/>,
+  9: <QuestionDesign9/>
   10: <QuestionDesign10/>
 };
 

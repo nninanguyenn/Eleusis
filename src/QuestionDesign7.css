@@ -1,0 +1,33 @@
+body{
+    margin-top: 250;
+}
+
+.cups {
+    position: relative;
+}
+
+.cups-Size {
+    height: 250px;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 20px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.badcup {
+    position: center;
+}
+
+.badcup-Size {
+    height: 250px;
+    width: 300px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
