@@ -6,9 +6,9 @@ import "./Animal.css";
 
 import bearIMG from './Bear.PNG';
 import bunnyIMG from './Bunny.PNG';
-import foxIMG from './fox.PNG';
-import snakeIMG from './snake.PNG';
-import birdIMG from './bird.PNG';
+import foxIMG from './fox.png';
+import snakeIMG from './snake.png';
+import birdIMG from './bird.png';
 
 const animalImages = {
   bearIMG,

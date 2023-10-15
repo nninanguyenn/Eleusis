@@ -1,6 +1,6 @@
 import React from 'react';
 import './QuestionDesign2.css';
-import fox from './fox.PNG';
+import fox from './fox.png';
 import bunny from './Bunny.PNG';
 import bear from './Bear.PNG';
 
