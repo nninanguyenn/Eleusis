@@ -23,7 +23,7 @@ question =
 export const questions = [
 
     {
-        description: "Imagine yourself walking through a forest.. who are you walking with?",
+        description: "Imagine yourself walking through a forest.. who do you imagine walking with?",
         options: [
             {
                 description: "Family",
@@ -31,10 +31,6 @@ export const questions = [
             },
             {
                 description: "Significant Other",
-                flags: ["neutral"]
-            },
-            {
-                description: "Pet Companion",
                 flags: ["neutral"]
             },
             {
