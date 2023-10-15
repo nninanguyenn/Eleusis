@@ -1,0 +1,45 @@
+body{
+    margin-top: 250;
+}
+
+.fox {
+    position: relative;
+}
+
+.fox-Size {
+    height: 225px;
+    width: 225px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.bunny {
+    position: relative;
+}
+
+.bunny-Size {
+    height: 225px;
+    width: 225px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.bear {
+    position: relative;
+}
+
+.bear-Size {
+    height: 225px;
+    width: 225px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}

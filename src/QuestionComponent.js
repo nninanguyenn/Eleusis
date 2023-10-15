@@ -13,6 +13,7 @@ import { useUser } from "./UserContext";
 import "./QuestionComponent.css";
 import questions from "./Questions";
 import QuestionDesign1 from './QuestionDesign1';
+import QuestionDesign2 from './QuestionDesign2';
 
 const defaultFlags = {
   happy: 0,
@@ -27,7 +28,8 @@ const defaultFlags = {
 
 // Mapping designs
 const designMap = {
-  1: <QuestionDesign1/>
+  1: <QuestionDesign1/>,
+  2: <QuestionDesign2/>
 };
 
 
