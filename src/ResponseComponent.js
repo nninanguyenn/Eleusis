@@ -19,7 +19,7 @@ const ResponseComponent = ({
                     className="responseTextarea"
                     value={userResponse}
                     onChange={(e) => setUserResponse(e.target.value)}
-                    placeholder="why did you choose this?"
+                    placeholder="share how you're feeling..."
                 />
                 <button
                     className="responseSubmitButton"
