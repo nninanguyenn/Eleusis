@@ -13,6 +13,11 @@ import { useUser } from "./UserContext";
 import "./QuestionComponent.css";
 import questions from "./Questions";
 import QuestionDesign1 from './QuestionDesign1';
+import QuestionDesign2 from './QuestionDesign2';
+import QuestionDesign3 from "./QuestionDesign3";
+import QuestionDesign4 from "./QuestionDesign4";
+import QuestionDesign5 from './QuestionDesign5';
+
 
 const defaultFlags = {
   happy: 0,
@@ -27,7 +32,11 @@ const defaultFlags = {
 
 // Mapping designs
 const designMap = {
-  1: <QuestionDesign1/>
+  1: <QuestionDesign1/>,
+  2: <QuestionDesign2/>,
+  3: <QuestionDesign3/>,
+  4: <QuestionDesign4/>,
+  5: <QuestionDesign5/>
 };
 
 
@@ -97,7 +106,7 @@ const QuestionComponent = ({ question, index, className, onNext, setIsOptionSele
     <div className={`questionContainer ${className}`}>
       <div className="questionHeader">
         <div>
-          <span> {index + 1} / 11</span>
+          <span> {index + 1} / 10</span>
           <p>{question.description}</p>
         </div>
       </div>

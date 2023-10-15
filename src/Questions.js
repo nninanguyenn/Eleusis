@@ -107,21 +107,6 @@ export const questions = [
 
     {
         id: 6,
-        description: "You walk up to the house.. is the door opened or closed?",
-        options: [
-            {
-                description: "Open",
-                flags: ["happy", "calm"]
-            },
-            {
-                description: "Closed",
-                flags: ["anxious", "aggressive"]
-            },
-        ],
-    },
-
-    {
-        id: 7,
         description: "You enter the house and see a table.. what components do you imagine to be on it?",
         options: [
             {
@@ -144,7 +129,7 @@ export const questions = [
     },
 
     {
-        id: 8,
+        id: 7,
         description: "You leave the house through the back door and find a cup in the garden.. what's the cup made out of?",
         options: [
             {
@@ -159,12 +144,13 @@ export const questions = [
     },
 
     {
-        id: 9,
+        id: 8,
         description: "What do you do with the cup?",
         options: [
             {
                 description: "Throw it away",
-                flags: ["aggressive", "frusttrated", "anxious"]
+                flags: ["aggressive", "frustrated", "anxious"]
+
             },
             {
                 description: "Put it back",
@@ -178,7 +164,7 @@ export const questions = [
     },
 
     {
-        id: 10,
+        id: 9,
         description: "As you walk to the end of the garden, you find a body of water.. it's a..",
         options: [
             {
@@ -197,7 +183,7 @@ export const questions = [
     },
 
     {
-        id: 11,
+        id: 10,
         description: "You must cross the body of water to get home.. how wet do you get?",
         options: [
             {
@@ -210,12 +196,5 @@ export const questions = [
             },
         ],
     },
-
-
-
-
-
-
-
 
 ];

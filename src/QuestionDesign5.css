@@ -1,0 +1,45 @@
+.alfred5 {
+    position: relative;
+}
+
+.alfred5-Size {
+    height: 100px;
+    width: 100px;
+    bottom: -400;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.fence1 {
+    position: relative;
+}
+
+.fence1-Size {
+    padding-bottom: 75;
+    height: 150px;
+    width: 150px;
+}
+
+.fence2 {
+    position: relative;
+}
+
+.fence2-Size {
+    padding-bottom: 75;
+    height: 150px;
+    width: 150px;
+}
+
+.house {
+    position: relative;
+}
+
+.house-Size {
+    padding-bottom: 75;
+    height: 300px;
+    width: 300px;
+
+}

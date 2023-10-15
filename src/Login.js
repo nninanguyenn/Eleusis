@@ -3,6 +3,7 @@ import fox from './fox.png';
 import tree1 from './tree_1.png';
 import tree2 from './tree_2.png';
 import abTree from './abstract_tree.png';
+import speechb from './speech-bubble.png';
 import { useNavigate } from "react-router-dom";
 import {
   getAuth,
@@ -59,7 +60,7 @@ const Login = () => {
       className="treeAb1"
       initial={{ opacity: 0}}
       animate={{ opacity: 1}}
-      transition={{ type: "tween", duration: 2, delay: 1 }}
+      transition={{ type: "tween", duration: 2, delay: 1.5 }}
       >
         <img
           img src = {abTree}
@@ -97,6 +98,17 @@ const Login = () => {
         <img
           img src = {tree2}
           className="top-tree-2"
+        />
+      </motion.div>
+      <motion.div 
+      className="speech"
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1}}
+      transition={{ type: "tween", duration: 2, delay: 3 }}
+      >
+        <img
+          img src = {speechb}
+          className="speech-bubble"
         />
       </motion.div>
     </div>
