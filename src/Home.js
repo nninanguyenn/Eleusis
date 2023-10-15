@@ -69,6 +69,10 @@ const Home = () => {
     }
   };
 
+  const navigateToJournal = () => {
+    navigate('/journal');
+  };
+
   const handleResponseSubmit = async () => {
     if (userResponse) {
       const datePlayed = new Date().toLocaleDateString("en-CA", {
@@ -170,11 +174,11 @@ const Home = () => {
             <button
               className="green-button"
               style={{ fontFamily: "Julius Sans One" }}
+              onClick={navigateToJournal}
             >
               view your past entries
             </button>
           </motion.div>
-          <Graph userId={auth.currentUser.uid} />
         </div>
       ) : (
         <div>
