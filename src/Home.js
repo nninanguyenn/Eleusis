@@ -37,6 +37,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    checkQuizTaken();
     if (user) {
       setIsPromptingForName(!user.name);
     }
@@ -52,6 +53,28 @@ const Home = () => {
       }
     }
   };
+
+  const checkQuizTaken = async () => {
+    if (user) {
+      const today = new Date().toLocaleDateString("en-CA", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
+      const userPlayedDateRef = doc(
+        db,
+        "users",
+        auth.currentUser.uid,
+        "PlayedDates",
+        today
+      );
+      const docSnap = await getDoc(userPlayedDateRef);
+      if (docSnap.exists()) {
+        navigate('/journal');  // Navigate to journal if quiz is already taken
+      }
+    }
+  };
+  
 
   const handleNameSubmit = async () => {
     if (name) {

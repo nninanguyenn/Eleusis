@@ -1,5 +1,6 @@
 .journal-parent {
     display: flex;
+    font-family: 'Julius Sans One';
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -39,7 +40,7 @@
 
 .entryContent {
     width: 90%;
-    background: radial-gradient(circle at center, #f9f5ea, #ece6d8f8);
+    background: radial-gradient(circle at center, #c5d8c4, #c5d8c4);
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -48,13 +49,13 @@
     padding: 10px;
     border-radius: 10px;
     border: none;
-    background-color: #f3f3f3;
+    background-color: #c5d8c4;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .emotionFlag:hover, .response:hover {
-    background-color: #e9e9e9;
+    background-color: #c5d8c4;
 }
 
 .journalContainer.active {

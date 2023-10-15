@@ -164,7 +164,7 @@ export const questions = [
         options: [
             {
                 description: "Throw it away",
-                flags: ["aggressive", "frusttrated", "anxiuos"]
+                flags: ["aggressive", "frustrated", "anxiuos"]
             },
             {
                 description: "Put it back",
