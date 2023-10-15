@@ -23,6 +23,7 @@ question =
 export const questions = [
 
     {
+        id: 1,
         description: "Imagine yourself walking through a forest.. who do you wish you were walking with?",
         options: [
             {
@@ -41,6 +42,7 @@ export const questions = [
     },
 
     {
+        id: 2,
         description: "You come across an animal while your walking.. what kind of animal is it?",
         options: [
             {
@@ -59,6 +61,7 @@ export const questions = [
     },
 
     {
+        id: 3,
         description: "This animal you've encountered.. what do you imagine it do?",
         options: [
             {
@@ -73,6 +76,7 @@ export const questions = [
     },
 
     {
+        id: 4,
         description: "You spot a house in the forest.. how big is it?",
         options: [
             {
@@ -87,6 +91,7 @@ export const questions = [
     },
 
     {
+        id: 5,
         description: "Does this house have a fence around it?",
         options: [
             {
@@ -101,6 +106,7 @@ export const questions = [
     },
 
     {
+        id: 6,
         description: "You walk up to the house.. is the door opened or closed?",
         options: [
             {
@@ -115,6 +121,7 @@ export const questions = [
     },
 
     {
+        id: 7,
         description: "You enter the house and see a table.. what components do you imagine to be on it?",
         options: [
             {
@@ -137,6 +144,7 @@ export const questions = [
     },
 
     {
+        id: 8,
         description: "You leave the house through the back door and find a cup in the garden.. what's the cup made out of?",
         options: [
             {
@@ -151,6 +159,7 @@ export const questions = [
     },
 
     {
+        id: 9,
         description: "What do you do with the cup?",
         options: [
             {
@@ -169,6 +178,7 @@ export const questions = [
     },
 
     {
+        id: 10,
         description: "As you walk to the end of the garden, you find a body of water.. it's a..",
         options: [
             {
@@ -187,6 +197,7 @@ export const questions = [
     },
 
     {
+        id: 11,
         description: "You must cross the body of water to get home.. how wet do you get?",
         options: [
             {
