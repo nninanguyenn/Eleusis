@@ -23,7 +23,7 @@ const defaultFlags = {
   sad: 0,
 };
 
-const QuestionComponent = ({ question, index, className, onNext, setCurrentDocId }) => {
+const QuestionComponent = ({ question, index, className, onNext }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const user = useUser();
 
@@ -33,8 +33,9 @@ const QuestionComponent = ({ question, index, className, onNext, setCurrentDocId
 
   const handleNextClick = async () => {
     if (selectedOption) {
-      const datePlayed = new Date().toISOString().slice(0, 10);
-      const userPlayedDateRef = doc(
+        const now = new Date();
+        const datePlayed = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const userPlayedDateRef = doc(
         db,
         "users",
         auth.currentUser.uid,
@@ -51,12 +52,11 @@ const QuestionComponent = ({ question, index, className, onNext, setCurrentDocId
 
       // Save the question-answer in a sub-collection called "Responses"
       const userQuestionsRef = collection(userPlayedDateRef, "Responses");
-      const docRef = await addDoc(userQuestionsRef, {
+      await addDoc(userQuestionsRef, {
         question: question,
         answer: selectedOption,
       });
-      setCurrentDocId(docRef.id);
-      
+
       // Update the flags based on selected option
       if (selectedOption.flags && selectedOption.flags.length) {
         let updates = {};
@@ -72,7 +72,7 @@ const QuestionComponent = ({ question, index, className, onNext, setCurrentDocId
         });
         await updateDoc(userPlayedDateRef, updates);
       }
-      setSelectedOption(null);
+
       onNext();
     } else {
       // Handle case where an answer isn't selected if required
