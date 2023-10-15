@@ -1,4 +1,65 @@
-.design-6-container {
+body{
+    margin-top: 250;
+}
+
+.objects {
+    margin-left: 160px;
+}
+
+.flower {
     position: relative;
-    height: inherit;
+}
+
+.flower-size {
+    height: 140px;
+    width: 140px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.pancake {
+    position: relative;
+}
+
+.pancake-size {
+    height: 150px;
+    width: 150px;
+    animation-name: float;
+    animation-duration: 2.33s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.ppl {
+    position: relative;
+}
+
+.ppl-size {
+    height: 125px;
+    width: 125px;
+    animation-name: float;
+    animation-duration: 2.66s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.table {
+    position: relative;
+}
+
+.table-size {
+    height: 400px;
+    width: 1000px;
+    margin-left: -70px;
+    margin-top: -140px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
 }
