@@ -1,0 +1,40 @@
+body{
+    margin-top: 250;
+}
+
+.images {
+    position: relative;
+    height: inherit;
+}
+
+.pond {
+    position: absolute;
+}
+
+.pond-Size {
+    height: 400px;
+    width: 400px;
+    margin-left: -50px;
+    margin-top: -30px;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
+
+.ocean {
+    position: absolute;
+}
+
+.ocean-Size {
+    height: 250px;
+    width: 300px;
+    top: 100px;
+    margin-left: 350px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+      display: inline;
+}
