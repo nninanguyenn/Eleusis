@@ -3,9 +3,8 @@ import './QuestionDesign2.css';
 import fox from './fox.png';
 import bunny from './Bunny.PNG';
 import bear from './Bear.PNG';
-import { motion } from "framer-motion";
 
-function QuestionDesign1() {
+function QuestionDesign2() {
     return (
         <div className='images'
             style={{ 
@@ -25,11 +24,11 @@ function QuestionDesign1() {
             />
         <img
             img src={bear} 
-            alt="Design for question 2"
+            alt="bear"
             className="bear-Size"
             />
         </div>
     );
 }
 
-export default QuestionDesign1;
+export default QuestionDesign2;
