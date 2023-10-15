@@ -25,7 +25,7 @@ const ResponseComponent = ({
                     className="responseSubmitButton"
                     onClick={() => {
                         handleResponseSubmit();
-                        setIsModalOpen(false);  // Close the modal when the response is submitted
+                        setIsModalOpen(false);
                     }}
                 >
                     submit

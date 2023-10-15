@@ -69,6 +69,10 @@ const Home = () => {
     }
   };
 
+  const navigateToJournal = () => {
+    navigate('/journal');
+  };
+
   const handleResponseSubmit = async () => {
     if (userResponse) {
       const datePlayed = new Date().toLocaleDateString("en-CA", {
@@ -157,25 +161,27 @@ const Home = () => {
           </div>
         </div>
       ) : endOfQuestions ? (
-            <div className="mood">your mood today is:<br></br>
-            <><div className = "endtext">
-          <p>Congratulations on completing the test!</p>
-          <p></p>
-          </div></>
-              <motion.div
-                className="pastEntriesButton"
-                initial={{ x: 0, y: "100vh" }}
-                animate={{ x: 0, y: "45vh" }}
-                transition={{ type: "tween", duration: 2 }}
-              >
-                <button className="green-button"
-                  style={{ fontFamily: 'Julius Sans One' }}
-                >
-                  view your past entries
-                </button>
-              </motion.div>
-              <Graph userId={auth.currentUser.uid} />
-            </div>
+
+        // You can render some other content here, like a thank you message, results, etc.
+
+        <div className="mood">
+          your mood today is:
+          <motion.div
+            className="pastEntriesButton"
+            initial={{ x: 0, y: "100vh" }}
+            animate={{ x: 0, y: "45vh" }}
+            transition={{ type: "tween", duration: 2 }}
+          >
+            <button
+              className="green-button"
+              style={{ fontFamily: "Julius Sans One" }}
+              onClick={navigateToJournal}
+            >
+              view your past entries
+            </button>
+          </motion.div>
+        </div>
+
       ) : (
         <div>
           <QuestionList
