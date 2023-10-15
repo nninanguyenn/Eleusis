@@ -5,7 +5,7 @@
 .alfred5-Size {
     height: 100px;
     width: 100px;
-    bottom: 50px;
+    bottom: -400;
     animation-name: float;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
@@ -18,7 +18,7 @@
 }
 
 .fence1-Size {
-    padding-bottom: 90px;
+    padding-bottom: 75;
     height: 150px;
     width: 150px;
 }
@@ -28,7 +28,7 @@
 }
 
 .fence2-Size {
-    padding-bottom: 90px;
+    padding-bottom: 75;
     height: 150px;
     width: 150px;
 }
@@ -38,7 +38,7 @@
 }
 
 .house-Size {
-    padding-bottom: 90px;
+    padding-bottom: 75;
     height: 300px;
     width: 300px;
 

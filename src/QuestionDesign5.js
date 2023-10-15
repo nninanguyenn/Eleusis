@@ -9,7 +9,6 @@ function QuestionDesign5() {
     return (
         <div className='images'
             style={{ 
-            paddingBottom: "35px",
             alignItems: "center",
             justifyContent: "center"}}
         >
