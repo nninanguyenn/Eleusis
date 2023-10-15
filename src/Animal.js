@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDoc } from "firebase/firestore";
-import { doc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "./firebase";
 import "./Animal.css";
 
@@ -21,6 +21,8 @@ function dotProduct(userVec, animalVec) {
 const Animal = () => {
   const [moodMap, setMoodMap] = useState({});
   const [moodVec, setMoodVec] = useState([]);
+  const [bestAnimal, setBestAnimal] = useState("");
+
   useEffect(() => {
     const today = new Date().toLocaleDateString("en-CA", {
       year: "numeric",
@@ -61,18 +63,24 @@ const Animal = () => {
         flags.neutral,
         flags.sad,
       ];
-      const mag = Math.sqrt(
-        tempVec.reduce((partialSum, a) => partialSum + a * a, 0)
-      );
-      const normalizedVec = tempVec.map((value) => value / mag);
-      console.log(mag);
-      setMoodVec(normalizedVec);
+      determineBestMatchingAnimal();
     }
   }, [moodMap]);
 
-  const getBestMatchingAnimal = () => {
+  const determineBestMatchingAnimal = async () => {
+    const animal = await getBestMatchingAnimal();
+    setBestAnimal(animal);
+    };
+
+  const getBestMatchingAnimal = async () => {
     let maxDotProduct = -Infinity;
     let bestAnimal = "";
+    const user = auth.currentUser;
+    const today = new Date().toLocaleDateString("en-CA", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
 
     for (const [animal, vector] of Object.entries(animalVectors)) {
       const currentDotProduct = dotProduct(moodVec, vector);
@@ -81,6 +89,11 @@ const Animal = () => {
         bestAnimal = animal;
       }
     }
+        const playedDateRef = doc(db, "users", user.uid, "PlayedDates", today);
+        await updateDoc(playedDateRef, {
+        bestMatchingAnimal: bestAnimal
+    });
+
     return bestAnimal;
   };
 
