@@ -23,7 +23,7 @@ question =
 export const questions = [
 
     {
-        description: "Imagine yourself walking through a forest.. who do you imagine walking with?",
+        description: "Imagine yourself walking through a forest.. who do you wish you were walking with?",
         options: [
             {
                 description: "Family",
@@ -155,7 +155,7 @@ export const questions = [
         options: [
             {
                 description: "Throw it away",
-                flags: ["aggressive", "frustrated", "anxiuos"]
+                flags: ["aggressive", "frusttrated", "anxiuos"]
             },
             {
                 description: "Put it back",
