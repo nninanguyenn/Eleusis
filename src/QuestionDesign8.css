@@ -10,7 +10,7 @@ body{
     height: 500px;
     width: 700px;
     margin-top: -80px;
-    margin-left: 140px;
+    margin-left: 100px;
     animation-name: float;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;

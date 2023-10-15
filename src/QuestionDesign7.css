@@ -8,7 +8,7 @@ body{
 
 .cups-Size {
     height: 250px;
-    width: 300px;
+    width: 280px;
     margin-left: 100px;
     margin-top: 20px;
     animation-name: float;
@@ -24,7 +24,7 @@ body{
 
 .badcup-Size {
     height: 250px;
-    width: 300px;
+    width: 280px;
     animation-name: float;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
