@@ -161,6 +161,7 @@ const Home = () => {
           </div>
         </div>
       ) : endOfQuestions ? (
+
         // You can render some other content here, like a thank you message, results, etc.
 
         <div className="mood">
@@ -180,6 +181,7 @@ const Home = () => {
             </button>
           </motion.div>
         </div>
+
       ) : (
         <div>
           <QuestionList

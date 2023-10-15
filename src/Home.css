@@ -27,6 +27,7 @@
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+      display: inline;
   }
 
   .pastEntriesButton {
@@ -65,6 +66,16 @@
 .bottom-left-image {
   width: 300px;
   height: 300px;
-  z-index: 1;
+}
 
+.endtext {
+  font-family: 'Julius Sans One';
+  font-size: 25px;
+  margin-top: -200px;
+  margin-left: center;
+  animation-name: float;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  display: inline-block;
 }

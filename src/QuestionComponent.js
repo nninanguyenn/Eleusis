@@ -11,6 +11,8 @@ import {
 } from "firebase/firestore";
 import { useUser } from "./UserContext";
 import "./QuestionComponent.css";
+import questions from "./Questions";
+import QuestionDesign1 from './QuestionDesign1';
 
 const defaultFlags = {
   happy: 0,
@@ -23,9 +25,20 @@ const defaultFlags = {
   sad: 0,
 };
 
+// Mapping designs
+const designMap = {
+  1: <QuestionDesign1/>
+};
+
+
 const QuestionComponent = ({ question, index, className, onNext, setIsOptionSelected, }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const user = useUser();
+
+
+  const renderDesign = () => {
+    return designMap[question.id] || null;  // return the design or null if not found
+  }
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -88,7 +101,7 @@ const QuestionComponent = ({ question, index, className, onNext, setIsOptionSele
           <p>{question.description}</p>
         </div>
       </div>
-      <div className="designRegion">{/* Your design content goes here */}</div>
+      <div className="designRegion">{renderDesign()}{/* Your design content goes here */}</div>
       <div className="responseButtons">
         {question.options.map((option, index) => (
           <button
